@@ -1,0 +1,19 @@
+{
+    "hash": "3c45dd81b97126648f860d84ac39651d",
+    "packages": [
+        {
+            "package": "noonat/pecs",
+            "version": "dev-master",
+            "source-reference": "0b911eebf01e5762d25dfe53bc85dcc60801e3ed",
+            "commit-date": "1341932972"
+        }
+    ],
+    "packages-dev": null,
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "noonat/pecs": 20
+    }
+}
