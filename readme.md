@@ -11,12 +11,12 @@ Declare an enum:
 require 'path/to/PhEnum/Enum.php';
 
 // Note: You have to escape the namespace delimiters
-PhEnum::define('Things\\To\\Do', array('Think', 'Code'));
+PhEnum\define('Things\\To\\Do', array('Think', 'Code'));
 
 ?>
 ```
 
-Then use your enum
+Then use it:
 
 ```php
 <?php
