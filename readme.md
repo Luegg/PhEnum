@@ -30,14 +30,15 @@ $another = Do::Code();
 var_dump($activity === Do::Think());	// bool(true)
 var_dump($another !== Do::Code());		// bool(false)
 
-var_dump($activity->name());			// string(5) "Think"
-var_dump($another->ordinal());			// int(1)
+var_dump(Do::Think()->name());			// string(5) "Think"
+var_dump(Do::Code()->ordinal());		// int(1)
 
-// Save the ordinal
-$i = Do::Code()->ordinal();
+// Save the ordinal number
+$ord = $another->ordinal();
 
 // And look it up afterwards
-$todo = Do($i);
+$todo = Do($ord);
+var_dump($todo === Do::Code());			// bool(true)
 
 ?>
 ```
