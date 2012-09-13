@@ -12,9 +12,9 @@ require 'Enum.php';
 
 // Note: You have to escape the namespace delimiters
 Luegg\PhEnum\define(
-		'yourCompany\\awesomeApp\\Season',
-		array('Spring', 'Summer', 'Fall', 'Winter')
-	);
+        'yourCompany\\awesomeApp\\Season',
+        array('Spring', 'Summer', 'Fall', 'Winter')
+    );
 
 ?>
 ```
@@ -30,11 +30,11 @@ require 'exampleDeclaration.php';
 $when = Season::Fall();
 $before = Season::Summer();
 
-var_dump($when === Season::Fall());		// bool(true)
+var_dump($when === Season::Fall());     // bool(true)
 var_dump($before === Season::Winter()); // bool(false)
 
-var_dump(Season::Spring()->name());		// string(6) "Spring"
-var_dump(Season::Winter()->ordinal());	// int(3)
+var_dump(Season::Spring()->name());     // string(6) "Spring"
+var_dump(Season::Winter()->ordinal());  // int(3)
 
 // Save the ordinal
 $ord = $before->ordinal();
@@ -43,7 +43,7 @@ $ord = $before->ordinal();
 
 // And look it up afterwards
 $after = Season::lookup($ord);
-var_dump(Season::Summer() == $after);	// bool(true)
+var_dump(Season::Summer() == $after);   // bool(true)
 
 ?>
 ```
