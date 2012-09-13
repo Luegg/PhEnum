@@ -9,8 +9,8 @@ Luegg\PhEnum::enum('Gender')
 Luegg\PhEnum::enum('Season')
     ->property('temp')
     ->property('rainy')
-    ->method('shouldWearJacket', function($season){
-            return $season->getTemp() < 15;
+    ->method('shouldWearJacket', function($season, $tempILike){
+            return $season->getTemp() < $tempILike;
         })
     ->method('needUmbrela', function($season){
             return $season->getRainy();
@@ -23,5 +23,9 @@ Luegg\PhEnum::enum('Season')
         ));
 
 describe("The enum factory", function(){
-
+    it("is instanciated by PhEnum::enum()", function(){
+        expect(Luegg\PhEnum::enum('Hi'))->to_be_a('Luegg\PhEnum\EnumGenerator');
+    });
 });
+
+\pecs\run(new \pecs\HtmlFormatter());

@@ -5,7 +5,7 @@ An enum implementation in PHP.
 * Works with namespaces
 * ...
 
-## Example
+## Example (v0.1.0)
 
 Declare an enum:
 
