@@ -51,7 +51,6 @@ class EnumGenerator{
                 self::$enumCode
             );
 
-        echo '<pre>' . $enum;
         eval($enum);
     }
 
@@ -125,9 +124,10 @@ final class <enumName> extends PhEnum{
 <methodMap>
             );
 
-        if(in_array($name, $methodMap)){
+        if(array_key_exists($name, $methodMap)){
             array_unshift($arguments, $this);
             $fn = $methodMap[$name];
+
             return call_user_func_array($fn, $arguments);
         }
 
