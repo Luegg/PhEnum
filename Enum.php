@@ -13,10 +13,6 @@ class Enum{
 
 use Luegg\PhEnum\Enum;
 
-function <enumName>($ordinal){
-    return <enumName>::lookup($ordinal);
-}
-
 class <enumName> extends Enum{
     private static $map = array();
 
