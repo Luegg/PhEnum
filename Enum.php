@@ -1,6 +1,6 @@
 <?php
 
-namespace PhEnum;
+namespace Luegg\PhEnum;
 
 function define($name, $types){
 	return Enum::define($name, $types);
@@ -11,7 +11,7 @@ class Enum{
 	private static $classCode = <<<'EOT'
 <namespace>
 
-use PhEnum\Enum;
+use Luegg\PhEnum\Enum;
 
 function <enumName>($ordinal){
 	return <enumName>::lookup($ordinal);

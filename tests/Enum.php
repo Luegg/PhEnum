@@ -1,10 +1,10 @@
 <?php
 
-require "../../vendor/noonat/pecs/lib/pecs.php";
-require "../../src/PhEnum/Enum.php";
+require "../vendor/noonat/pecs/lib/pecs.php";
+require "../Enum.php";
 
-PhEnum\define("Gender", array("Male", "Female"));
-PhEnum\define("Lyrics\\Word", array("Never", "Gonna", "Give", "You", "Up"));
+Luegg\PhEnum\define("Gender", array("Male", "Female"));
+Luegg\PhEnum\define("Lyrics\\Word", array("Never", "Gonna", "Give", "You", "Up"));
 
 describe("A enum factory", function(){
 	it("declares a class", function(){
@@ -36,7 +36,7 @@ describe("An enum", function(){
 	});
 
 	it("returns an instance of Enum", function(){
-		expect(Gender::Male())->to_be_an_instance_of("PhEnum\Enum");
+		expect(Gender::Male())->to_be_an_instance_of("Luegg\PhEnum\Enum");
 	});
 
 	it("has a string representation", function(){
