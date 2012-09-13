@@ -1,6 +1,9 @@
 # PhEnum
 
-An enum implementation in PHP (with namespace support)
+An enum implementation in PHP.
+
+* Works with namespaces
+* ...
 
 ## Example
 
