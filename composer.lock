@@ -1,6 +1,9 @@
 {
-    "hash": "3c45dd81b97126648f860d84ac39651d",
+    "hash": "c283a535430caa50182a6318be432312",
     "packages": [
+
+    ],
+    "packages-dev": [
         {
             "package": "noonat/pecs",
             "version": "dev-master",
@@ -8,7 +11,6 @@
             "commit-date": "1341932972"
         }
     ],
-    "packages-dev": null,
     "aliases": [
 
     ],
