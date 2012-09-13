@@ -29,6 +29,10 @@ class <enumName> extends Enum{
         <init>
     }
 
+    static function lookup($ordinal){
+        return static::$map[$ordinal];
+    }
+
     <methods>
 }
 
@@ -44,10 +48,6 @@ EOT;
         return self::$map[<ordinal>];
     }
 EOT;
-
-    static function lookup($ordinal){
-        return static::$map[$ordinal];
-    }
 
     function __toString(){
         return $this->name;
