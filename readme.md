@@ -8,10 +8,13 @@ Declare an enum:
 
 ```php
 <?php
-require 'path/to/PhEnum/Enum.php';
+require 'Enum.php';
 
 // Note: You have to escape the namespace delimiters
-PhEnum\define('Things\\To\\Do', array('Think', 'Code'));
+Luegg\PhEnum\define(
+		'yourCompany\\awesomeApp\\Season',
+		array('Spring', 'Summer', 'Fall', 'Winter')
+	);
 
 ?>
 ```
@@ -20,25 +23,27 @@ Then use it:
 
 ```php
 <?php
-namespace Things\To;
+use yourCompany\awesomeApp\Season;
 
-require 'your/path/Do.php';
+require 'exampleDeclaration.php';
 
-$activity = Do::Think();
-$another = Do::Code();
+$when = Season::Fall();
+$before = Season::Summer();
 
-var_dump($activity === Do::Think());	// bool(true)
-var_dump($another !== Do::Code());		// bool(false)
+var_dump($when === Season::Fall());		// bool(true)
+var_dump($before === Season::Winter()); // bool(false)
 
-var_dump(Do::Think()->name());			// string(5) "Think"
-var_dump(Do::Code()->ordinal());		// int(1)
+var_dump(Season::Spring()->name());		// string(6) "Spring"
+var_dump(Season::Winter()->ordinal());	// int(3)
 
-// Save the ordinal number
-$ord = $another->ordinal();
+// Save the ordinal
+$ord = $before->ordinal();
+
+// Some DB interaction
 
 // And look it up afterwards
-$todo = Do($ord);
-var_dump($todo === Do::Code());			// bool(true)
+$after = Season::lookup($ord);
+var_dump(Season::Summer() == $after);	// bool(true)
 
 ?>
 ```
