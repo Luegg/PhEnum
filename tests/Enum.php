@@ -6,7 +6,7 @@ require "../Enum.php";
 Luegg\PhEnum\define("Gender", array("Male", "Female"));
 Luegg\PhEnum\define("Lyrics\\Word", array("Never", "Gonna", "Give", "You", "Up"));
 
-describe("A enum factory", function(){
+describe("An enum factory", function(){
     it("declares a class", function(){
         expect(class_exists("Gender"))->to_be_true();
     });
@@ -44,8 +44,7 @@ describe("An enum", function(){
         expect(Gender::Female()->ordinal())->to_be(1);
     });
 
-    it("has a static method which converts ordinals to enums", function(){
-        expect(function_exists("Gender"))->to_be_true();
+    it("can convert ordinals to enum type", function(){
         expect(Gender::lookup(1))->to_be(Gender::Female());
     });
 });

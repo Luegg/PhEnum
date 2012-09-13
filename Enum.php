@@ -6,7 +6,7 @@ function define($name, $types){
     return Enum::define($name, $types);
 }
 
-class Enum{
+abstract class Enum{
 
     private static $classCode = <<<'EOT'
 <namespace>
@@ -14,11 +14,11 @@ class Enum{
 use Luegg\PhEnum\Enum;
 
 class <enumName> extends Enum{
-    private static $map = array();
+    protected static $map = array();
 
-    private $ordinal;
+    protected $ordinal;
 
-    private $name;
+    protected $name;
 
     private function __construct($ordinal, $name){
         $this->ordinal = $ordinal;
@@ -27,22 +27,6 @@ class <enumName> extends Enum{
 
     static function init(){
         <init>
-    }
-
-    function __toString(){
-        return $this->name;
-    }
-
-    function name(){
-        return $this->name;
-    }
-
-    function ordinal(){
-        return $this->ordinal;
-    }
-
-    static function lookup($ordinal){
-        return self::$map[$ordinal];
     }
 
     <methods>
@@ -60,6 +44,22 @@ EOT;
         return self::$map[<ordinal>];
     }
 EOT;
+
+    static function lookup($ordinal){
+        return static::$map[$ordinal];
+    }
+
+    function __toString(){
+        return $this->name;
+    }
+
+    function name(){
+        return $this->name;
+    }
+
+    function ordinal(){
+        return $this->ordinal;
+    }
 
     static function define($enumName, $typeNames){
         $parts = explode("\\", $enumName);
