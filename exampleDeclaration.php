@@ -2,20 +2,6 @@
 
 require 'PhEnum.php';
 
-/*$fns = array(
-        'a' => function(){
-            return 'a';
-        },
-    );
-
-class A{
-    private static $fns = array(
-            'a' => function(){
-                return 'a';
-            }
-        );
-}*/
-
 Luegg\PhEnum::enum('Gender')
     ->create(array('Female', 'Male'));
 
